@@ -28,9 +28,7 @@ using namespace std;
 
 TEST_CASE( "Test 05", "[Project01]" ) 
 {
-  Course C("CS", "Professional Seminar", 499, 01, "Hummel", 
-           /*A-F*/ 1, 2, 3, 4, 5, 
-           /*I,S,U,W,NR*/ 2, 88, 0, 1, 1);
+  Course C("CS", "Professional Seminar", 499, 01, "Hummel", 1, 2, 3, 4, 5, 2, 88, 0, 1, 1);
   //Course C = ParseCourse("CS,499,01,Professional Seminar,0,0,0,0,0,2,1, 88,0,0,Hummel");
   REQUIRE(C.Dept == "CS");
   REQUIRE(C.Title == "Professional Seminar");
