@@ -38,11 +38,10 @@ TEST_CASE( "Test 08", "[Project01]" )
     //D+F = 4+5+4+5+5+40+48+59+49+56 = 275
     //DFW = 777
     //N = 1031
-  int DFW = 0; int N = 0;
-   REQUIRE(GetDFWRate(C, DFW, N) >= 75.363);
-    REQUIRE(GetDFWRate(C, DFW, N) <= 75.365);
-    REQUIRE(DFW == 777);
-    REQUIRE(N == 1031);
+    vector<Course> temp = FindCourses(C, 5);
+    REQUIRE(temp.size() == 0);
+    vector<Course> temp2 = FindCourses(C, 500);
+    REQUIRE(temp2.size() == 5);
     
       
 }
