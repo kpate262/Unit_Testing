@@ -57,9 +57,9 @@ TEST_CASE( "Test 04", "[Project01]" )
   //10/16
   int DFW = 0; int N =0;
     
-  REQUIRE(GetDFWRate(C, DFW, N) == 62.5);
-  REQUIRE(DFW == 0);
-  REQUIRE(N == 0);
+  REQUIRE(GetDFWRate(D, DFW, N) == 62.5);
+  REQUIRE(DFW == 10);
+  REQUIRE(N == 16);
   
   
   ///REQUIRE(C.getGradingType() == Course::Satisfactory);
