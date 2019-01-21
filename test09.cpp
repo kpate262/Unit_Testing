@@ -26,7 +26,7 @@
 using namespace std;
 
 
-TEST_CASE( "Test 08", "[Project01]" ) 
+TEST_CASE( "Test 09", "[Project01]" ) 
 {
   Dept C("CS");
   C.Courses.push_back(Course("CS", "Professional Seminar", 499, 01, "Hummel", 1, 2, 3, 4, 5, 2, 88, 0, 1, 1));

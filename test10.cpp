@@ -1,0 +1,54 @@
+/*test08.cpp*/
+
+//
+// <<Kisan Patel>>
+// U. of Illinois, Chicago
+// CS 341, Spring 2019
+// Project #01: Grade Analysis
+// 
+
+
+// *****************************************************************
+//
+// Test cases:
+// 
+// *****************************************************************
+
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <cmath>
+#include <vector>
+
+#include "gradeutil.h"
+#include "catch.hpp"
+
+using namespace std;
+
+
+TEST_CASE( "Test 10", "[Project01]" ) 
+{
+  Dept C("CS");
+  C.Courses.push_back(Course("CS", "Professional Seminar", 377, 02, "Hummel", 1, 2, 3, 4, 5, 2, 88, 0, 1, 1));
+      C.Courses.push_back(Course("Bio", "Professional Se", 439, 04, "Humm", 5, 41, 13, 4, 5, 2, 88, 0, 13, 1));
+      C.Courses.push_back(Course("CS", "Professio", 239, 1, "Hummfdfd", 1, 20, 30, 40, 5, 2, 88, 0, 51, 1));
+      C.Courses.push_back(Course("CS", "Profes", 251, 3, "melHum", 15, 22, 32, 48, 59, 2, 88, 0, 431, 1));
+      C.Courses.push_back(Course("CS", "Profe", 141, 02, "Dale", 12, 24, 33, 49, 56, 2, 88, 0, 6, 1));
+    //W = 1+13+51+431+6 = 502
+    //D+F = 4+5+4+5+5+40+48+59+49+56 = 275
+    //DFW = 777
+    //N = 1031
+    
+    vector<Course> temp = FindCourses(C, "DU");
+    REQUIRE(temp.size() == 0);
+    vector<Course> temp2 = FindCourses(C, "Hu");
+    REQUIRE(temp2.size() == 3);
+    REQUIRE(temp2[0].Number == 239);
+    REQUIRE(temp2[1].Number == 377);
+    REQUIRE(temp2[2].Number == 439);
+    REQUIRE(temp2[0].Section == 1);
+    REQUIRE(temp2[1].Section == 2);
+    REQUIRE(temp2[2].Section == 4);
+ 
+      
+}
