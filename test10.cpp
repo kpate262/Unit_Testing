@@ -58,15 +58,15 @@ TEST_CASE( "Test 10", "[Project01]" )
       CS.Courses.push_back(Course("CS", "Profe", 251, 02, "Dale", 12, 24, 33, 49, 56, 2, 88, 0, 6, 1));
     
     Dept EE("EE");
-      EE.Courses.push_back(Course("EE", "Professional Seminar", 499, 01, "Hummel", 1, 2, 3, 4, 5, 2, 88, 0, 1, 1));
-      EE.Courses.push_back(Course("EE", "Professional Se", 500, 2, "Humm", 5, 41, 13, 4, 5, 2, 88, 0, 13, 1));
-      EE.Courses.push_back(Course("EE", "Professio", 361, 1, "Hummfdfd", 1, 20, 30, 40, 5, 2, 88, 0, 51, 1));
+      EE.Courses.push_back(Course("EE", "Professional Seminar", 499, 01, "mmel", 1, 2, 3, 4, 5, 2, 88, 0, 1, 1));
+      EE.Courses.push_back(Course("EE", "Professional Se", 500, 2, "Hummi", 5, 41, 13, 4, 5, 2, 88, 0, 13, 1));
+      EE.Courses.push_back(Course("EE", "Professio", 361, 1, "Hmmfdfd", 1, 20, 30, 40, 5, 2, 88, 0, 51, 1));
       EE.Courses.push_back(Course("EE", "Profes", 151, 1, "melHum", 15, 22, 32, 48, 59, 2, 88, 0, 431, 1));
       EE.Courses.push_back(Course("EE", "Profe", 251, 02, "Dale", 12, 24, 33, 49, 56, 2, 88, 0, 6, 1));
     
     Dept CE("CE");
-      CE.Courses.push_back(Course("CE", "Professional Seminar", 499, 01, "Hummel", 1, 2, 3, 4, 5, 2, 88, 0, 1, 1));
-      CE.Courses.push_back(Course("CE", "Professional Se", 500, 1, "Humm", 5, 41, 13, 4, 5, 2, 88, 0, 13, 1));
+      CE.Courses.push_back(Course("CE", "Professional Seminar", 499, 01, "jummel", 1, 2, 3, 4, 5, 2, 88, 0, 1, 1));
+      CE.Courses.push_back(Course("CE", "Professional Se", 500, 1, "tumm", 5, 41, 13, 4, 5, 2, 88, 0, 13, 1));
       CE.Courses.push_back(Course("CE", "Professio", 361, 1, "Hummfdfd", 1, 20, 30, 40, 5, 2, 88, 0, 51, 1));
       CE.Courses.push_back(Course("CE", "Profes", 151, 1, "melHum", 15, 22, 32, 48, 59, 2, 88, 0, 431, 1));
       CE.Courses.push_back(Course("CE", "Profe", 251, 02, "Dale", 12, 24, 33, 49, 56, 2, 88, 0, 6, 1));
@@ -75,6 +75,15 @@ TEST_CASE( "Test 10", "[Project01]" )
     UIC.Depts.push_back(CS);
     UIC.Depts.push_back(EE);
     UIC.Depts.push_back(CE);
+    vector<Course> temp5 = FindCourses(UIC, "Ru");
+    REQUIRE(temp5.size() == 0);
+    
+    vector<Course> temp6 = FindCourses(UIC, "Hu");
+    REQUIRE(temp6[0].Dept == "CS");
+    REQUIRE(temp6[1].Dept == "CS");
+    REQUIRE(temp6[2].Dept == "CE");
+    REQUIRE(temp6[3].Dept == "CS");
+    REQUIRE(temp6[4].Dept == "EE");
     
     vector<Course> temp3 = FindCourses(UIC, 611);
     REQUIRE(temp3.size() == 0);
