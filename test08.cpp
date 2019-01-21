@@ -33,15 +33,20 @@ TEST_CASE( "Test 08", "[Project01]" )
       C.Courses.push_back(Course("CS", "Professional Se", 4990, 01, "Humm", 5, 41, 13, 4, 5, 2, 88, 0, 13, 1));
       C.Courses.push_back(Course("CS", "Professio", 49, 01, "Hummfdfd", 1, 20, 30, 40, 5, 2, 88, 0, 51, 1));
       C.Courses.push_back(Course("CS", "Profes", 500, 01, "melHum", 15, 22, 32, 48, 59, 2, 88, 0, 431, 1));
-      C.Courses.push_back(Course("CS", "Profe", 339, 01, "Dale", 12, 24, 33, 49, 56, 2, 88, 0, 6, 1));
+      C.Courses.push_back(Course("CS", "Profe", 500, 02, "Dale", 12, 24, 33, 49, 56, 2, 88, 0, 6, 1));
     //W = 1+13+51+431+6 = 502
     //D+F = 4+5+4+5+5+40+48+59+49+56 = 275
     //DFW = 777
     //N = 1031
+    
     vector<Course> temp = FindCourses(C, 5);
     REQUIRE(temp.size() == 0);
     vector<Course> temp2 = FindCourses(C, 500);
-    REQUIRE(temp2.size() == 5);
+    REQUIRE(temp2.size() == 2);
+    REQUIRE(temp2[0].Number == 500);
+    REQUIRE(temp2[1].Number == 500);
+    REQUIRE(temp2[0].Section == 01);
+    REQUIRE(temp2[1].Section == 02);
     
       
 }
